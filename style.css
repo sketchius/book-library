@@ -76,8 +76,15 @@ body {
     grid-auto-rows: min-content;
     padding: 2rem;
     padding-top: 2.5rem;
-    grid-gap: 2rem;
+    grid-gap: 1rem;
     align-items: center;
+    align-content: start;
+}
+
+.none .sidebar * {
+    border-style: solid;
+    border-width: 1px;
+    border-color:black;
 }
 
 .sidebar button {
@@ -100,6 +107,21 @@ body {
     height: 32px;
 }
 
+.sidebar .newBookFormContainer {
+    overflow: hidden;
+    display: none;
+}
+
+.sidebar .newBookFormContainer .newBookForm {
+    position: relative;
+    transition: top .75s ease-out, opacity .5s linear;
+    top: -500px;
+    opacity: 0%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 .sidebar .newBookForm label {
     display: block;
     margin-top: 1rem;
@@ -107,11 +129,19 @@ body {
     font-weight: 300;
 }
 
+.sidebar .newBookForm label:nth-child(1) {
+    margin-top: 0;
+}
+
+
 .sidebar .newBookForm input {
     padding-left: 1rem;
     padding-right: 1rem;
-    width: 90%;
-    height: 3ch;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    height: 4ch;
     border-radius: .5rem;
     border-color:var(--primary-color);
     border-style: solid;

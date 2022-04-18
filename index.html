@@ -4,7 +4,7 @@
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <script src='script.js'></script>
+    <script src='script.js' defer></script>
     <link rel='stylesheet' href='style.css'>
     <title>Document</title>
 </head>
@@ -19,30 +19,26 @@
                 <span>YOUR LIBRARY</span>
             </div>
             <div class='sidebar'>
-                <button><img src='assets/addbook.png' alt='Create Icon'><span>Add Book</span></button>
-                <form action='' class='newBookForm'>
-                    <label for='addbook-title'>Title</label>
-                    <input type='text' id='addbook-title'><div></div>
-
-                    <label for='addbook-author'>Author</label>
-                    <input type='text' id='addbook-author'><div></div>
-
-                    <label for='addbook-date'>Publication Year</label>
-                    <input type='number' id='addbook-date'><div></div>
-
-                    <label for='addbook-pages'>Pages</label>
-                    <input type='number' min='1'id='addbook-pages'><div></div>
-
-                    <label for='addbook-rating'>Rating (out of 5)</label>
-                    <input type='number' min='0' max='5' id='addbook-rating'><div></div>
-
-                    <div class='addBookButtons'>
-                        <button type='button' class='cancelButton'>Cancel</button>
-                        <button type='button' class='addButton'>Add</button>
-                    </div>
-
-                </form>
-                <button><img src='assets/sort.png' alt='Sort Icon'><span>Sort</span></button>
+                <button id = 'newBookButton'><img src='assets/addbook.png' alt='Create Icon'><span>Add Book</span></button>
+                <div class='newBookFormContainer'>
+                    <form action='' class='newBookForm'>
+                        <label for='addbook-title'>Title
+                            <input type='text' id='addbook-title'></label>
+                        <label for='addbook-author'>Author
+                            <input type='text' id='addbook-author'></label>
+                        <label for='addbook-date'>Publication Year
+                            <input type='number' id='addbook-date'></label>
+                        <label for='addbook-pages'>Pages
+                            <input type='number' min='1'id='addbook-pages'></label>
+                        <label for='addbook-rating'>Rating (out of 5)
+                            <input type='number' min='0' max='5' id='addbook-rating'></label>
+                        <div class='addBookButtons'>
+                            <button type='button' class='cancelButton' id='bookFormCancelButton'>Cancel</button>
+                            <button type='button' class='addButton' id='bookFormAddButton'>Add</button>
+                        </div>
+                    </form>
+                </div>
+                <button id='sortButton'><img src='assets/sort.png' alt='Sort Icon'><span>Sort</span></button>
             </div>
             <div class='content'>
                 <div class='bookCard'>
