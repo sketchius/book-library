@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='script.js'></script>
+    <link rel='stylesheet' href='style.css'>
+    <title>Document</title>
+</head>
+<body>
+    <div class='masterLayout'>
+        <div class='sideSpacer'></div>
+        <div class='layout'>
+            <div class='logo'>
+                <img src='assets/library.png' alt='Library Icon'>
+            </div>
+            <div class='header'>
+                <span>YOUR LIBRARY</span>
+            </div>
+            <div class='sidebar'>
+                <button><img src='assets/addbook.png' alt='Create Icon'><span>Add Book</span></button>
+                <form action='' class='newBookForm'>
+                    <label for='addbook-title'>Title</label>
+                    <input type='text' id='addbook-title'><div></div>
+
+                    <label for='addbook-author'>Author</label>
+                    <input type='text' id='addbook-author'><div></div>
+
+                    <label for='addbook-date'>Publication Year</label>
+                    <input type='number' id='addbook-date'><div></div>
+
+                    <label for='addbook-pages'>Pages</label>
+                    <input type='number' min='1'id='addbook-pages'><div></div>
+
+                    <label for='addbook-rating'>Rating (out of 5)</label>
+                    <input type='number' min='0' max='5' id='addbook-rating'><div></div>
+
+                    <div class='addBookButtons'>
+                        <button type='button' class='cancelButton'>Cancel</button>
+                        <button type='button' class='addButton'>Add</button>
+                    </div>
+
+                </form>
+                <button><img src='assets/sort.png' alt='Sort Icon'><span>Sort</span></button>
+            </div>
+            <div class='content'>
+                <div class='bookCard'>
+                    
+
+
+                    <div class='title-and-remove'>
+                        <div class='title'>Ender's Game</div>
+                        <img class='remove' src='assets/remove.png' alt='Remove Icon'>
+                    </div>
+                    <div class='author-and-pages'>
+                        <div class='author'>Orson Scott Card</div>
+                        <div class='pages'>324 p.</div>
+                    </div>
+                    <div class='date-and-rating'>
+                        <div class='date'>1985</div>
+                        <div class='rating'>4.5/5</div>
+                    </div>
+                    <div class='buttons'>
+                        <div></div>
+                        <img src='assets/favorite.png' alt='Favorite Icon'>
+                        <img src='assets/share.png' alt='Share Icon'>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='sideSpacer'></div>
+    </div>
+</body>
+</html>
