@@ -2,10 +2,11 @@
 
 * {
     font-family: 'Montserrat', 'Arial', sans-serif;
-    --primary-color: #7a9fe2;
+    --primary-color: #78a4f7;
     --primary-color-dark: #183a79; 
-    --primary-color-light: #b5cfff; 
-    --secondary-color: #ffefbe;
+    --primary-color-light: #82c7ff; 
+    --secondary-color: #d0f9ff;
+    --secondary-color-dark: #84d2ff;
 }
 
 body {
@@ -22,6 +23,7 @@ body {
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: auto;
+    background-color: var(--primary-color-dark);
 }
 
 .layout {
@@ -30,8 +32,9 @@ body {
     flex-basis: 80%;
 
     display: grid;
-    grid-template-columns: 30ch 1fr;
+    grid-template-columns: auto 1fr;
     grid-template-rows: 7rem 1fr;
+    transition: all 2s linear;
     height: 100vh;
     width: 100vw;
     margin: 0;
@@ -41,14 +44,14 @@ body {
 .logo {
     grid-row: 1;
     grid-column: 1;
-    background-color: var(--primary-color);
+    background-color: #ffffff;
     display: grid;
 }
 
 .logo img {
     justify-self: right;
     align-self: center;
-    margin-right: .5rem;
+    margin-right: 2rem;
     width: 64px;
     height: 64px;
 }
@@ -65,7 +68,7 @@ body {
     justify-self: start;
     font-size: 5rem;
     font-weight: 200;
-    margin-left: .5rem;
+    margin-left: 2rem;
 }
 
 .sidebar {
@@ -80,6 +83,9 @@ body {
     grid-gap: 1rem;
     align-items: center;
     align-content: start;
+    transition: width 1s liner;
+    width: fit-content;
+    min-width: 20ch;
 }
 
 .none .sidebar * {
@@ -115,7 +121,8 @@ body {
 
 .sidebar .newBookFormContainer .newBookForm {
     position: relative;
-    transition: top .75s ease-out, opacity .5s linear;
+    transition: all .5s;
+    width: 18ch;
     top: -500px;
     opacity: 0%;
     overflow: hidden;
@@ -185,18 +192,20 @@ body {
     padding: 2rem;
     grid-row: 2;
     grid-column: 2;
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(241, 255, 252);
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(20ch,30ch));
+    grid-template-columns: repeat(auto-fit,minmax(30ch,35ch));
     grid-auto-rows: min-content;
     grid-gap: 1rem;
 }
 
 .bookCard {
-    background-color: white;
-    border-radius: 1rem;
     height: fit-content;
-    box-shadow: 1px 5px 5px #c5c5e7;
+    background-color: transparent;
+}
+
+.bookCard:hover>div {
+    border-color: var(--primary-color-dark);
 }
 
 .rating {
@@ -204,14 +213,14 @@ body {
 }
 
 .author-and-pages,.date-and-rating {
-    padding: .25rem 1rem;
+    padding: .25rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
 }
 
 .author-and-pages {
-    padding: .5rem 1rem;
+    padding: .5rem 1.5rem;
 }
 
 .date {
@@ -222,14 +231,37 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--primary-color);
-    background-color: var(--secondary-color);
-    padding: .125rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-bottom-style: solid;
+    border-bottom-width: .3rem;
+    padding: .125rem 1.5rem;
+    overflow: hidden;
     padding-top: .5rem;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
     font-size: 1.8rem;
     font-weight: 500;
+    height: 3.6ch;
+    border-radius: 2rem 2rem 0 0;
+
+    border-color: var(--primary-color);
+    border-style: solid;
+    border-width: .25rem;
+    border-bottom: none;
+}
+
+.bookCardBottomSection {
+    background-color: white;
+    border-radius: 0 0 2rem 2rem;
+    border-color: var(--primary-color);
+    border-style: solid;
+    border-width: .25rem;
+    border-top: none;
+}
+
+.title-and-remove div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: auto;
 }
 
 .bookCard .author {
@@ -242,12 +274,34 @@ body {
 }
 
 .buttons {
-    padding: .125rem 1rem;
+    padding: .125rem 1.5rem;
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
     display: grid;
-    grid-template-columns: 1fr 24px 24px;
+    grid-template-columns: max-content 1fr 24px 24px 24px;
     grid-gap: .5rem;
+    align-items: center;
+}
+
+.buttons .readText {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: .125rem .5rem;
+    margin-left: -.125rem;
+    background-color: var(--primary-color-light);
+    color: white;
+    border-radius: 1rem;
+}
+
+.buttons div {
+    margin: 0;
+    padding: 0;
+}
+
+.buttons input {
+    margin: 0;
+    padding: 0;
+    margin-right: .25rem;
 }
 
 .buttons img {
