@@ -1,5 +1,6 @@
 let myLibrary = [];
 
+
 const newBookFormContainer = document.querySelector('.newBookFormContainer');
 const newBookForm = document.querySelector('.newBookForm');
 
@@ -20,13 +21,7 @@ bookFormAddButton.addEventListener('click',addBookFromForm);
 testBook = new Book('Ender\'s Game','Orson Scott Card','1985','324','4.5');
 addBookToLibrary(testBook);
 
-function Book(title, author, date, pages, rating) {
-  this.title = title;
-  this.author = author;
-  this.date = date;
-  this.pages = pages;
-  this.rating = rating;
-}
+
 
 function addBookToLibrary(book) {
   const bookCardElement = document.createElement('div');
